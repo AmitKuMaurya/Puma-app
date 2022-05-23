@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    #navbar{
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: lightgreen;
+    }
+    #navbar>div>a{
+      text-decoration: none;
+    }
+    #navbar>button{
+      padding: 8px 10px 8px 10px;
+
+    }
+    #navbar>button>a{
+      text-decoration: none;
+    }
+
+  </style>
+  <body>
+    <div id="navbar">
+      <div>Puma Store</div>
+      <button id="show_products"><a href="inventory.html">Show Products</a></button>
+      <!-- <div id="show_products" ><a href="inventory.html">Show Products</a></div> -->
+      <!--Create Show Products button here, give id as "show_products". avoid making spelling mistakes in HTML id's-->
+    </div>
+    <div>
+      <h2>Add Products</h2>
+      <!--Create a form here to accept product data from user, give form HTML id as "products"-->
+      <!--Create four inputs to accept Type, Description, price, & image-->
+      <!--give the inputs following respective id's, "type", "desc", "price","image"-->
+      <!--create a "Add Product" button to submit form, give it html id as "add_product"-->
+      <form id="form" onsubmit="Submitit(event)">
+        <input type="text" id="type" placeholder="Product type" required>
+        <input type="text" id="desc" placeholder="Product Description" required>
+        <input type="number" id="price" placeholder="Product price" required>
+        <input type="url" id="image" placeholder="Product image" required>
+        <!-- <input type="button" value="Add Product"> -->
+        <input type="submit" id="add_product" value="Add product">
+
+      </form>
+    </div>
+  </body>
+</html>
+
+<script src="./scripts/index.js"></script>
+
+<!-- <script>
+  let productsArr = JSON.parse(localStorage.getItem("products")) || [];
+// document.querySelector("#form").addEventListener("submit",Submitit);
+
+// function Products(t,d,p,i){
+//     this.type = t;
+//     this.description = d;
+//     this.price = p;
+//     this.image = i;
+// }
+
+function Submitit(event){
+    event.preventDefault();
+    // console.log("I am here")
+  // let type = form.type.value;
+  // let Description = form.desc.vlaue;
+  // let Price = form.price.vlaue;
+  // let Image = form.image.vlaue;
+
+    let obj = {
+      Type : form.type.value,
+      Description : form.desc.value,
+      Price : form.price.value,
+      Image : form.image.value
+    }
+    productsArr.push(obj);
+    localStorage.setItem("products",JSON.stringify(productsArr));
+    window.location.reload();
+    
+}
+console.log(productsArr);
+
+// addNow();
+// Submitit();
+</script> -->
